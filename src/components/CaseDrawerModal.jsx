@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   X,
   MapPin,
@@ -13,8 +13,17 @@ import { useLanguage } from "../context/LanguageContext.jsx";
 export default function CaseDrawerModal({ project, onClose }) {
   const { t } = useLanguage();
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const [isTallImage, setIsTallImage] = useState(false);
   const [clientName, setClientName] = useState("");
   const [seasonIndex, setSeasonIndex] = useState(1);
+  const imgRef = useRef(null);
+
+  const checkImageAspect = (imgEl) => {
+    if (!imgEl || !imgEl.naturalWidth || !imgEl.naturalHeight) return;
+    // aspect-ratio: 4/5 means width / height = 0.8 (or height / width = 1.25)
+    const isTallerThan4by5 = imgEl.naturalHeight / imgEl.naturalWidth > 5 / 4;
+    setIsTallImage(isTallerThan4by5);
+  };
 
   useEffect(() => {
     setActiveSlideIndex(0);
@@ -41,10 +50,17 @@ export default function CaseDrawerModal({ project, onClose }) {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [project, onClose]);
 
+  const slides = project?.gallery || [];
+  const currentSlide = slides[activeSlideIndex] || slides[0];
+
+  useEffect(() => {
+    if (imgRef.current && imgRef.current.complete) {
+      checkImageAspect(imgRef.current);
+    }
+  }, [currentSlide?.src]);
+
   if (!project) return null;
 
-  const slides = project.gallery;
-  const currentSlide = slides[activeSlideIndex] || slides[0];
   const selectedSeasonLabel =
     t.drawer.seasonOptions[seasonIndex] || t.drawer.seasonOptions[0];
 
@@ -154,11 +170,21 @@ export default function CaseDrawerModal({ project, onClose }) {
             </div>
 
             <figure className="rounded-lg overflow-hidden hairline-box bg-sand">
-              <div className="relative aspect-[4/5] w-full overflow-hidden">
+              <div
+                className={`relative w-full overflow-hidden ${
+                  isTallImage ? "aspect-[4/5]" : ""
+                }`}
+              >
                 <img
+                  ref={imgRef}
                   src={currentSlide.src}
                   alt={currentSlide.alt}
-                  className="w-full h-full object-cover transition-all duration-500 object-center"
+                  onLoad={(e) => checkImageAspect(e.currentTarget)}
+                  className={`w-full transition-all duration-500 ${
+                    isTallImage
+                      ? "h-full object-cover object-center"
+                      : "h-auto block"
+                  }`}
                 />
               </div>
               <figcaption className="p-3 bg-sand/50 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
