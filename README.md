@@ -105,4 +105,4 @@ npm run preview
 
 ## 👨‍💻 Авторская разработка
 
-Сайт разработан **Каирбековым Жанатом** — [kairbekov-official.netlify.app](https://kairbekov-official.netlify.app/)
+Сайт разработан **Каирбековым Жанатом** — [kairbekoff.netlify.app](https://kairbekoff.netlify.app/)

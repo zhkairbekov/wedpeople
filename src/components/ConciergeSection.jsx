@@ -309,7 +309,7 @@ export default function ConciergeSection({ selectedFormatKey }) {
 
             <a
               data-v-5551e99b=""
-              href="https://kairbekov-official.netlify.app/"
+              href="https://kairbekoff.netlify.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-3.5 px-4 py-3 rounded-2xl shadow-xs transition-all self-start md:self-auto"
