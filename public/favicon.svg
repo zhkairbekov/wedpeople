@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Deep Obsidian Editorial Background -->
+  <rect width="64" height="64" rx="14" fill="#161514" />
+  <!-- Subtle Champagne Gold Inner Hairline Frame -->
+  <rect x="4.5" y="4.5" width="55" height="55" rx="10" stroke="#C5A880" stroke-opacity="0.35" stroke-width="1" />
+  <!-- Editorial Serif "W" Monogram -->
+  <path
+    d="M13.5 20.5H20.8L25.4 39.2L30.8 21.8H35.2L40.5 39.2L45.1 20.5H51.2L42.8 46.5H38.2L32.8 29.5L27.3 46.5H22.7L13.5 20.5Z"
+    fill="#FAF8F5"
+  />
+  <!-- Signature Terracotta Silk Accent Dot -->
+  <circle cx="50" cy="43.5" r="3.5" fill="#D9531E" />
+</svg>
