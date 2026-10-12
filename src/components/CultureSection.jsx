@@ -72,11 +72,11 @@ export default function CultureSection() {
           </div>
 
           <div className="lg:col-span-5">
-            <div className="relative rounded-lg overflow-hidden hairline-dark-box aspect-[4/5] sm:aspect-[3/4] shadow-2xl bg-obsidian">
+            <div className="relative w-full rounded-lg overflow-hidden hairline-dark-box aspect-[4/5] sm:aspect-[3/4] shadow-2xl bg-obsidian safari-clip-fix">
               <img
                 src="/images/culture-spotlight.jpg"
                 alt={t.culture.imageAlt}
-                className="w-full h-full object-cover object-top"
+                className="absolute inset-0 w-full h-full object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/25 to-transparent opacity-90" />
               <div className="absolute bottom-6 sm:bottom-8 left-6 sm:left-8 right-6 sm:right-8">

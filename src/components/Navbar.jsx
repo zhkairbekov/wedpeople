@@ -44,16 +44,16 @@ export default function Navbar({ onOpenConcierge }) {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 w-full py-2 transition-all duration-300 ${
+        className={`sticky top-0 z-50 w-full transition-all duration-300 ${
           isMobileMenuOpen
             ? "bg-obsidian text-alabaster border-b border-white/10"
             : isScrolled
-            ? "bg-alabaster/95 backdrop-blur-md shadow-xs hairline-b text-ink"
+            ? "bg-alabaster/95 backdrop-blur-md shadow-sm hairline-b text-ink"
             : "bg-alabaster/90 backdrop-blur-md hairline-b text-ink"
         }`}
       >
-        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 h-15 sm:h-17 md:h-19 flex items-center justify-between gap-2 sm:gap-4">
-          {/* Left: Compact Brand Lockup (Stacked so it never crowds horizontal space) */}
+        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 h-14 sm:h-16 flex items-center justify-between gap-2 sm:gap-4">
+          {/* Left: Compact Brand Lockup */}
           <a
             href="#"
             onClick={() => setIsMobileMenuOpen(false)}
@@ -106,7 +106,7 @@ export default function Navbar({ onOpenConcierge }) {
                   lang === "ru"
                     ? isMobileMenuOpen
                       ? "bg-alabaster text-obsidian font-bold"
-                      : "bg-ink text-alabaster font-semibold shadow-2xs"
+                      : "bg-ink text-alabaster font-semibold shadow-sm"
                     : isMobileMenuOpen
                     ? "text-alabaster/70 hover:text-white"
                     : "text-muted hover:text-ink"
@@ -120,7 +120,7 @@ export default function Navbar({ onOpenConcierge }) {
                 aria-pressed={lang === "kk"}
                 className={`px-2 py-1 rounded-[4px] leading-none transition-all duration-150 ${
                   lang === "kk"
-                    ? "bg-terracotta text-white font-semibold shadow-2xs"
+                    ? "bg-terracotta text-white font-semibold shadow-sm"
                     : isMobileMenuOpen
                     ? "text-alabaster/70 hover:text-white"
                     : "text-muted hover:text-ink"
@@ -140,7 +140,7 @@ export default function Navbar({ onOpenConcierge }) {
                   onOpenConcierge();
                 }
               }}
-              className="hidden sm:inline-flex items-center gap-2 bg-terracotta text-white px-3.5 md:px-4 xl:px-5 py-2 md:py-2.5 rounded-md text-[11px] xl:text-xs tracking-wider uppercase font-medium whitespace-nowrap shadow-xs hover:bg-[#b84315] active:scale-95 transition-all duration-200"
+              className="hidden sm:inline-flex items-center gap-2 bg-terracotta text-white px-3.5 md:px-4 xl:px-5 py-2 md:py-2.5 rounded-md text-[11px] xl:text-xs tracking-wider uppercase font-medium whitespace-nowrap shadow-sm hover:bg-[#b84315] active:scale-95 transition-all duration-200"
             >
               <span>{t.nav.bookMeeting}</span>
               <ArrowRight className="w-3.5 h-3.5 shrink-0" />
@@ -177,7 +177,7 @@ export default function Navbar({ onOpenConcierge }) {
         role="dialog"
         aria-modal="true"
         aria-label={t.nav.ariaMobileMenu}
-        className={`lg:hidden fixed inset-x-0 top-10 sm:top-17 bottom-0 z-40 bg-obsidian text-alabaster transition-all duration-300 ease-out flex flex-col justify-between overflow-y-auto ${
+        className={`lg:hidden fixed inset-x-0 top-14 sm:top-16 bottom-0 z-40 bg-obsidian text-alabaster transition-all duration-300 ease-out flex flex-col justify-between overflow-y-auto ${
           isMobileMenuOpen
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 -translate-y-3 pointer-events-none"

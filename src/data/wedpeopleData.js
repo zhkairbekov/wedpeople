@@ -9,9 +9,9 @@ export const BRAND_INFO = {
     "Каждая история — особенная. Мы бережно сопровождаем вас на пути к дню, который станет началом вашей семейной истории, превращая подготовку в удовольствие, а мечты — в продуманную реальность.",
   ],
   manifestoSignoff: "С любовью, команда WedPeople",
-  founderName: "Гульмира",
-  founderHandle: "@g.erikovna",
-  founderUrl: "https://www.instagram.com/g.erikovna/",
+  founderName: "Канат Аяганов",
+  founderHandle: "by Kanat Ayaganov",
+  founderUrl: "https://www.instagram.com/wedpeople/",
   instagramHandle: "@wedpeople",
   instagramUrl: "https://www.instagram.com/wedpeople/",
   phoneDisplay: "+7 777 767 08 35",
@@ -29,7 +29,7 @@ export const LOCALIZED_CONTENT = {
       ...BRAND_INFO,
       tagline: "WedPeople — свадебные истории со вкусом.",
       manifestoSignoff: "С любовью, команда WedPeople",
-      founderName: "Гульмира",
+      founderName: "Канат Аяганов",
       whatsappDefaultUrl:
         "https://wa.me/77777670835?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%20%D1%85%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%BB%D0%B0%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%20%D0%BC%D0%B5%D1%80%D0%BE%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D0%B5",
     },
@@ -274,7 +274,7 @@ export const LOCALIZED_CONTENT = {
           city: "Астана",
           venue: "The Ritz-Carlton, Astana",
           title: "Қыз ұзату Алины (A&A Wedding)",
-          coupleHandles: "A&A Wedding • @g.erikovna",
+          coupleHandles: "A&A Wedding • @wedpeople",
           shortSummary:
             "«Мы сохранили все важные, красивые традиции и семейное тепло на Қыз ұзату Алины». Легкость шелка, живое звучание и современное чествование невесты в кругу самых близких.",
           editorialQuote:
@@ -288,8 +288,8 @@ export const LOCALIZED_CONTENT = {
           credits: [
             {
               role: "Организация",
-              name: "WedPeople & Гульмира",
-              handle: "@wedpeople / @g.erikovna",
+              name: "WedPeople by Kanat Ayaganov",
+              handle: "@wedpeople",
             },
             { role: "Локация", name: "The Ritz-Carlton, Astana" },
             {
@@ -421,8 +421,8 @@ export const LOCALIZED_CONTENT = {
           credits: [
             {
               role: "Организация",
-              name: "WedPeople & Гульмира",
-              handle: "@wedpeople / @g.erikovna",
+              name: "WedPeople by Kanat Ayaganov",
+              handle: "@wedpeople",
             },
             { role: "Невеста", name: "Dana", handle: "@danaa.ql" },
             { role: "Локация", name: "The Ritz-Carlton, Astana" },
@@ -589,19 +589,16 @@ export const LOCALIZED_CONTENT = {
         "Обсудим концепцию вашей истории за чашкой кофе в Астане, Алматы или онлайн.",
       nameLabel: "Имя и фамилия",
       namePlaceholder: "Айгерим и Данияр",
-      seasonLabel: "Выбор сезона / формата",
-      seasonOptions: [
-        "Весна 2026 (Май – Июнь)",
-        "Лето 2026 (Июль – Август)",
-        "Осень 2026 (Сентябрь – Ноябрь)",
-        "Қыз ұзату (Индивидуальная дата)",
-      ],
+      seasonLabel: "Желаемая дата / сезон или формат",
+      seasonPlaceholder: "Например: Август 2026, Алматы / Қыз ұзату",
       submitButton: "Обсудить кейс в WhatsApp",
       securityNote: "Мгновенный переход в диалог с продюсером WedPeople",
-      buildWhatsappMessage: (projectTitle, clientName, season) =>
+      buildWhatsappMessage: (projectTitle, clientName, eventDate) =>
         `Здравствуйте, команда WedPeople! Нам очень понравился ваш кейс «${projectTitle}». Меня зовут ${
           clientName.trim() || "..."
-        }. Хотим запланировать встречу (${season}).`,
+        }. Хотим запланировать встречу${
+          eventDate && eventDate.trim() ? ` (${eventDate.trim()})` : ""
+        }.`,
     },
     culture: {
       sectionAria: "Культурный код и современное Қыз ұзату",
@@ -818,7 +815,7 @@ export const LOCALIZED_CONTENT = {
       ...BRAND_INFO,
       tagline: "WedPeople — талғаммен өрілген той хикаялары.",
       manifestoSignoff: "Махаббатпен, WedPeople командасы",
-      founderName: "Гүлмира",
+      founderName: "Қанат Аяғанов",
       whatsappDefaultUrl:
         "https://wa.me/77777670835?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20%D0%B1%D0%B5%2C%20WedPeople%21%20%D0%9C%D0%B5%D1%80%D0%B5%D0%BA%D0%B5%D0%BB%D1%96%D0%BA%20%D1%96%D1%81-%D1%88%D0%B0%D1%80%D0%B0%D0%BD%D1%8B%20%D0%B6%D0%BE%D1%81%D0%BF%D0%B0%D1%80%D0%BB%D0%B0%D2%93%D1%8B%D0%BC%20%D0%BA%D0%B5%D0%BB%D0%B5%D0%B4%D1%96",
     },
@@ -1063,7 +1060,7 @@ export const LOCALIZED_CONTENT = {
           city: "Астана",
           venue: "The Ritz-Carlton, Astana",
           title: "Алинаның Қыз ұзату тойы (A&A Wedding)",
-          coupleHandles: "A&A Wedding • @g.erikovna",
+          coupleHandles: "A&A Wedding • @wedpeople",
           shortSummary:
             "«Алинаның Қыз ұзату тойында біз барлық маңызды, әсем дәстүрлерді және отбасылық жылулықты сақтадық». Жібектің нәзіктігі, жанды әуен және ең жақын жандардың ортасында қалыңдықты ұлықтау.",
           editorialQuote:
@@ -1077,8 +1074,8 @@ export const LOCALIZED_CONTENT = {
           credits: [
             {
               role: "Ұйымдастыру",
-              name: "WedPeople & Гүлмира",
-              handle: "@wedpeople / @g.erikovna",
+              name: "WedPeople by Kanat Ayaganov",
+              handle: "@wedpeople",
             },
             { role: "Локация", name: "The Ritz-Carlton, Astana" },
             {
@@ -1209,8 +1206,8 @@ export const LOCALIZED_CONTENT = {
           credits: [
             {
               role: "Ұйымдастыру",
-              name: "WedPeople & Гүлмира",
-              handle: "@wedpeople / @g.erikovna",
+              name: "WedPeople by Kanat Ayaganov",
+              handle: "@wedpeople",
             },
             { role: "Қалыңдық", name: "Dana", handle: "@danaa.ql" },
             { role: "Локация", name: "The Ritz-Carlton, Astana" },
@@ -1376,19 +1373,16 @@ export const LOCALIZED_CONTENT = {
         "Астанада, Алматыда бір шыны кофе үстінде немесе онлайн форматта сіздің хикаяңыздың концепциясын талқылайық.",
       nameLabel: "Аты-жөніңіз",
       namePlaceholder: "Әйгерім мен Данияр",
-      seasonLabel: "Маусымды / форматты таңдау",
-      seasonOptions: [
-        "Көктем 2026 (Мамыр – Маусым)",
-        "Жаз 2026 (Шілде – Тамыз)",
-        "Күз 2026 (Қыркүйек – Қараша)",
-        "Қыз ұзату (Жеке күн)",
-      ],
+      seasonLabel: "Қалаған күні / маусым немесе формат",
+      seasonPlaceholder: "Мысалы: Тамыз 2026, Алматы / Қыз ұзату",
       submitButton: "Кейсті WhatsApp-та талқылау",
       securityNote: "WedPeople продюсерімен тікелей диалогқа лезде өту",
-      buildWhatsappMessage: (projectTitle, clientName, season) =>
+      buildWhatsappMessage: (projectTitle, clientName, eventDate) =>
         `Сәлеметсіз бе, WedPeople командасы! Бізге сіздердің «${projectTitle}» кейстеріңіз қатты ұнады. Менің есімім — ${
           clientName.trim() || "..."
-        }. Кездесуді жоспарлағымыз келеді (${season}).`,
+        }. Кездесуді жоспарлағымыз келеді${
+          eventDate && eventDate.trim() ? ` (${eventDate.trim()})` : ""
+        }.`,
     },
     culture: {
       sectionAria: "Мәдени код және заманауи Қыз ұзату",

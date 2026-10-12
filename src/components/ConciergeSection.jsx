@@ -154,7 +154,7 @@ export default function ConciergeSection({ selectedFormatKey }) {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder={t.concierge.namePlaceholder}
-                    className="w-full h-12 sm:h-13 bg-white/5 border border-white/20 rounded px-4 text-alabaster placeholder-white/30 focus:outline-none focus:border-terracotta font-body text-sm transition-colors"
+                    className="w-full h-12 bg-white/5 border border-white/20 rounded px-4 text-alabaster placeholder-white/30 focus:outline-none focus:border-terracotta font-body text-sm transition-colors"
                   />
                 </div>
 
@@ -202,7 +202,7 @@ export default function ConciergeSection({ selectedFormatKey }) {
                     value={cityAndDate}
                     onChange={(e) => setCityAndDate(e.target.value)}
                     placeholder={t.concierge.cityDatePlaceholder}
-                    className="w-full h-12 sm:h-13 bg-white/5 border border-white/20 rounded px-4 text-alabaster placeholder-white/30 focus:outline-none focus:border-terracotta font-body text-sm transition-colors"
+                    className="w-full h-12 bg-white/5 border border-white/20 rounded px-4 text-alabaster placeholder-white/30 focus:outline-none focus:border-terracotta font-body text-sm transition-colors"
                   />
                 </div>
 

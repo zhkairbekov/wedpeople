@@ -75,7 +75,7 @@ export default function ProcessSection() {
         </div>
 
         {/* Transparent Budget Assurance Box */}
-        <div className="mt-10 md:mt-12 p-6 md:p-8 bg-alabaster rounded-lg hairline-box flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xs">
+        <div className="mt-10 md:mt-12 p-6 md:p-8 bg-alabaster rounded-lg hairline-box flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm">
           <div className="flex items-start sm:items-center gap-4">
             <div className="w-12 h-12 rounded-full bg-sand flex items-center justify-center text-terracotta flex-shrink-0">
               <ShieldCheck className="w-6 h-6" />

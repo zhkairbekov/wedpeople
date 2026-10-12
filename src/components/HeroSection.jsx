@@ -105,11 +105,11 @@ export default function HeroSection({ onOpenConcierge }) {
 
         {/* Right Column: Asymmetric Dual-Frame Editorial Composition */}
         <div className="lg:col-span-5 relative animate-reveal-delay-2">
-          <div className="relative w-full aspect-[4/4.3] sm:aspect-[4/5] overflow-hidden rounded-lg shadow-xl bg-sand hairline-box group">
+          <div className="relative w-full aspect-[4/5] overflow-hidden rounded-lg shadow-xl bg-sand hairline-box safari-clip-fix group">
             <img
               src={activeFrame.src}
               alt={activeFrame.alt}
-              className="w-full h-full object-cover object-center transition-all duration-700 ease-out group-hover:scale-[1.03]"
+              className="absolute inset-0 w-full h-full object-cover object-center transition-all duration-700 ease-out group-hover:scale-[1.03]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-obsidian/70 via-obsidian/15 to-transparent pointer-events-none" />
 
@@ -166,11 +166,11 @@ export default function HeroSection({ onOpenConcierge }) {
           </div>
 
           {/* Secondary Overlapping Macro Detail Frame */}
-          <div className="hidden sm:block absolute -top-6 -left-6 xl:-left-8 w-36 md:w-44 aspect-square rounded-lg overflow-hidden border-4 border-alabaster shadow-xl bg-sand animate-subtle-float">
+          <div className="hidden sm:block absolute -top-6 -left-6 xl:-left-8 w-36 md:w-44 aspect-square rounded-lg overflow-hidden border-4 border-alabaster shadow-xl bg-sand safari-clip-fix animate-subtle-float">
             <img
               src="/images/hero-detail.jpg"
               alt={t.hero.macroAlt}
-              className="w-full h-full object-cover object-center"
+              className="absolute inset-0 w-full h-full object-cover object-center"
             />
           </div>
         </div>

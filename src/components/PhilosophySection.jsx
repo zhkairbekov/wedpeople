@@ -56,17 +56,12 @@ export default function PhilosophySection() {
 
           <div className="mt-8 pt-6 hairline-t max-w-md mx-auto flex flex-col items-center justify-center space-y-2">
             <p className="font-serifAlt italic text-xl md:text-2xl text-terracotta font-medium">
-              {t.brand.manifestoSignoff} &amp; {t.brand.founderName}
+              {t.brand.manifestoSignoff} — {t.brand.founderName}
             </p>
             <div className="flex items-center gap-3 text-xs font-mono text-muted">
-              <a
-                href={t.brand.founderUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-terracotta transition-colors underline underline-offset-4"
-              >
+              <span className="uppercase tracking-wider">
                 {t.brand.founderHandle}
-              </a>
+              </span>
               <span>•</span>
               <a
                 href={t.brand.instagramUrl}
@@ -84,7 +79,7 @@ export default function PhilosophySection() {
           {t.philosophy.pillars.map((pillar) => (
             <article
               key={pillar.index}
-              className="p-6 sm:p-8 bg-alabaster rounded-lg hairline-box flex flex-col justify-between hover:border-terracotta transition-all duration-300 shadow-xs"
+              className="p-6 sm:p-8 bg-alabaster rounded-lg hairline-box flex flex-col justify-between hover:border-terracotta transition-all duration-300 shadow-sm"
             >
               <div>
                 <div className="flex justify-between items-center mb-5">

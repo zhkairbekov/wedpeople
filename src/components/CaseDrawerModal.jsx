@@ -15,7 +15,7 @@ export default function CaseDrawerModal({ project, onClose }) {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const [isTallImage, setIsTallImage] = useState(false);
   const [clientName, setClientName] = useState("");
-  const [seasonIndex, setSeasonIndex] = useState(1);
+  const [eventDate, setEventDate] = useState("");
   const imgRef = useRef(null);
 
   const checkImageAspect = (imgEl) => {
@@ -61,17 +61,10 @@ export default function CaseDrawerModal({ project, onClose }) {
 
   if (!project) return null;
 
-  const selectedSeasonLabel =
-    t.drawer.seasonOptions[seasonIndex] || t.drawer.seasonOptions[0];
-
   const whatsappPrefillHref = `${
     t.brand.whatsappBaseUrl
   }?text=${encodeURIComponent(
-    t.drawer.buildWhatsappMessage(
-      project.title,
-      clientName,
-      selectedSeasonLabel
-    )
+    t.drawer.buildWhatsappMessage(project.title, clientName, eventDate)
   )}`;
 
   const handleSubmit = (e) => {
@@ -169,7 +162,7 @@ export default function CaseDrawerModal({ project, onClose }) {
               </div>
             </div>
 
-            <figure className="rounded-lg overflow-hidden hairline-box bg-sand">
+            <figure className="rounded-lg overflow-hidden hairline-box bg-sand safari-clip-fix">
               <div
                 className={`relative w-full overflow-hidden ${
                   isTallImage ? "aspect-[4/5]" : ""
@@ -182,7 +175,7 @@ export default function CaseDrawerModal({ project, onClose }) {
                   onLoad={(e) => checkImageAspect(e.currentTarget)}
                   className={`w-full transition-all duration-500 ${
                     isTallImage
-                      ? "h-full object-cover object-center"
+                      ? "absolute inset-0 h-full object-cover object-center"
                       : "h-auto block"
                   }`}
                 />
@@ -197,7 +190,7 @@ export default function CaseDrawerModal({ project, onClose }) {
               </figcaption>
             </figure>
 
-            <div className="flex gap-2.5 overflow-x-auto no-scrollbar py-1">
+            <div className="flex gap-2.5 overflow-x-auto no-scrollbar py-1 px-1">
               {slides.map((slide, idx) => (
                 <button
                   key={slide.tag}
@@ -209,11 +202,11 @@ export default function CaseDrawerModal({ project, onClose }) {
                       : "opacity-75 hover:opacity-100 bg-sand/40"
                   }`}
                 >
-                  <div className="h-20 w-full overflow-hidden">
+                  <div className="relative h-20 w-full overflow-hidden">
                     <img
                       src={slide.src}
                       alt={slide.alt}
-                      className="w-full h-full object-cover"
+                      className="absolute inset-0 w-full h-full object-cover"
                     />
                   </div>
                   <div className="p-2">
@@ -305,18 +298,14 @@ export default function CaseDrawerModal({ project, onClose }) {
                 >
                   {t.drawer.seasonLabel}
                 </label>
-                <select
+                <input
                   id="drawer-event-date"
-                  value={seasonIndex}
-                  onChange={(e) => setSeasonIndex(Number(e.target.value))}
+                  type="text"
+                  value={eventDate}
+                  onChange={(e) => setEventDate(e.target.value)}
+                  placeholder={t.drawer.seasonPlaceholder}
                   className="w-full text-xs font-body rounded hairline-box px-3.5 py-2.5 focus:outline-none focus:border-terracotta bg-alabaster/60 text-ink"
-                >
-                  {t.drawer.seasonOptions.map((opt, idx) => (
-                    <option key={opt} value={idx}>
-                      {opt}
-                    </option>
-                  ))}
-                </select>
+                />
               </div>
 
               <button
