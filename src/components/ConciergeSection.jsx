@@ -99,7 +99,7 @@ export default function ConciergeSection({ selectedFormatKey }) {
                       {t.concierge.instagramCardLabel}
                     </span>
                     <span className="font-body text-base font-semibold text-alabaster group-hover:text-champagne transition-colors">
-                      {t.brand.instagramHandle} • {t.brand.founderHandle}
+                      {t.brand.instagramHandle}
                     </span>
                   </div>
                 </div>

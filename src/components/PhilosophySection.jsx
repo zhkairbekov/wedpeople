@@ -59,10 +59,6 @@ export default function PhilosophySection() {
               {t.brand.manifestoSignoff} — {t.brand.founderName}
             </p>
             <div className="flex items-center gap-3 text-xs font-mono text-muted">
-              <span className="uppercase tracking-wider">
-                {t.brand.founderHandle}
-              </span>
-              <span>•</span>
               <a
                 href={t.brand.instagramUrl}
                 target="_blank"
